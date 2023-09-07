@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { E, getAllLocalStorageItems, getRefValue, getRefValues, isTrue, preventDefault, refs, uploadFiles, useEventLoop } from "/utils/state"
 import { EventLoopContext, StateContext } from "/utils/context.js"
 import "focus-visible/dist/focus-visible"
-import { Box, Container, Text, useColorMode } from "@chakra-ui/react"
+import { Box, Button, Heading, HStack, Text, useColorMode, VStack } from "@chakra-ui/react"
 import NextHead from "next/head"
 
 
@@ -35,14 +35,17 @@ export default function Component() {
 
   return (
   <Fragment><Fragment>
-  <Container>
-  <Box sx={{"textAlign": "right"}}>
-  {`What is Reflex?`}
-</Box>
-  <Box sx={{"textAlign": "left"}}>
-  {`A way to build web apps in pure Python!`}
-</Box>
-</Container>
+  <VStack>
+  <HStack>
+  <Button colorScheme={`red`} sx={{"borderRadius": "1em"}}>
+  {`Decrement`}
+</Button>
+  <Heading sx={{"fontSize": "2em"}}/>
+  <Button colorScheme={`green`} sx={{"borderRadius": "1em"}}>
+  {`increment`}
+</Button>
+</HStack>
+</VStack>
   <NextHead>
   <title>
   {`Reflex App`}

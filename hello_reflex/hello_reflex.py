@@ -1,21 +1,23 @@
 import reflex as rx
 
-def index() -> rx.Component:
-    return rx.container(
-        rx.box(
-            "What is Reflex?",
-            # The user's question is on the right.
-            text_align="right",
+def index():
+    return rx.vstack(
+        rx.hstack(
+        rx.button(
+            "Decrement",
+            color_scheme="red",
+            border_radius="1em"
         ),
-        rx.box(
-            "A way to build web apps in pure Python!",
-            # The answer is on the left.
-            text_align="left",
-        ),
+        rx.heading(font_size="2em"),
+        rx.button(
+            "increment",
+            color_scheme="green",
+            border_radius="1em"
+        )
     )
 
+    )
 
-# Add state and page to the app.
-app = rx.App()
+app=rx.App()
 app.add_page(index)
 app.compile()
